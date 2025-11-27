@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Filter, Plus, Calendar as CalendarIcon, Flag, CheckCircle2, Circle, Trash2, Clock } from 'lucide-react';
+import { Plus, Calendar as CalendarIcon, Flag, CheckCircle2, Circle, Trash2, Clock } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import { Card } from './ui/card';
 import { getTasks, updateTask, deleteTask as deleteTaskAPI } from '../services/tasks';

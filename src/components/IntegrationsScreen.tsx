@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Mail, MessageCircle, Slack, Github, ArrowLeft,
+  Mail, MessageCircle, Slack, ArrowLeft,
   CheckCircle2, Link2, MessageSquare, Send, Hash, Users,
-  Phone, Video
+  Phone,
 } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';

@@ -2,7 +2,19 @@
       "name": "trace-ai-web",
       "version": "0.1.0",
       "private": true,
+      "type": "module",
+      "cloudflare": {
+            "label": "Vite React Template",
+            "products": [
+                  "Workers"
+            ],
+            "categories": [],
+            "preview_icon_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/532a5378-9717-4964-385b-5fafd2160200/public",
+            "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/ec7f4be5-d1d6-4e94-0851-126341745400/preview",
+            "publish": true
+      },
       "dependencies": {
+            "hono": "4.8.2",
             "@radix-ui/react-accordion": "^1.2.3",
             "@radix-ui/react-alert-dialog": "^1.1.6",
             "@radix-ui/react-aspect-ratio": "^1.1.2",
@@ -50,18 +62,28 @@
             "vaul": "^1.1.2"
       },
       "devDependencies": {
-            "@cloudflare/workers-types": "^4.20251127.0",
-            "@types/node": "^20.10.0",
-            "@types/react": "^19.2.7",
-            "@vitejs/plugin-react-swc": "^3.10.2",
-            "vite": "6.3.5",
-            "wrangler": "^4.51.0"
+            "@cloudflare/vite-plugin": "1.7.5",
+            "@eslint/js": "9.29.0",
+            "@types/node": "24.0.4",
+            "@types/react": "19.0.10",
+            "@types/react-dom": "19.0.4",
+            "@vitejs/plugin-react": "5.0.0",
+            "eslint": "9.27.0",
+            "eslint-plugin-react-hooks": "5.2.0",
+            "eslint-plugin-react-refresh": "0.4.20",
+            "globals": "16.2.0",
+            "typescript": "5.8.3",
+            "typescript-eslint": "8.35.0",
+            "vite": "^6.0.0",
+            "wrangler": "4.21.x"
       },
       "scripts": {
+            "build": "tsc -b && vite build",
+            "cf-typegen": "wrangler types",
+            "check": "tsc && vite build && wrangler deploy --dry-run",
+            "deploy": "wrangler deploy",
             "dev": "vite",
-            "build": "vite build",
-            "preview": "vite preview",
-            "pages:deploy": "wrangler pages deploy ./build",
-            "deploy": "npm run build && npm run pages:deploy"
+            "lint": "eslint .",
+            "preview": "npm run build && vite preview"
       }
 }
